@@ -20,38 +20,68 @@ namespace WpfApp3
         {
             InitializeComponent();
         }
-       private string MaleiDuzeLitery;
+        private string MaleiDuzeLitery;
         private string znakiSpecjalne;
+        private string cyfry;
+        private string haslo;
+        Random losuj = new Random();
         private void generuj_btn_Click(object sender, RoutedEventArgs e)
         {
-            string haslo;
+            /* string haslo;
+             MaleiDuzeLitery = "abcdefgshijklmoprstuwxyzABCDEFGHIJKLMNOPRSTUWXYZ";
+             znakiSpecjalne = "!@#$%^&*";
+             int[] cyfry = new int[10];
+             int ile = 0;
+             ileznaow_txt.Text = ile.ToString();
+             if(malelitery_check.IsChecked == true)
+             {
+                 //Random rnd = new Random(ile);
+
+             }
+             if (cyfry_check.IsChecked == true)
+             {
+
+             }
+             if (specjalne_check.IsChecked == true)
+             {
+
+             }
+             Random rnd = new Random();
+            // for (int i = 0; i < Cyfry.Length; i++)
+
+             */
             MaleiDuzeLitery = "abcdefgshijklmoprstuwxyzABCDEFGHIJKLMNOPRSTUWXYZ";
             znakiSpecjalne = "!@#$%^&*";
-            int[] cyfry = new int[10];
-            int ile = 0;
-            ileznaow_txt.Text = ile.ToString();
-            if(malelitery_check.IsChecked == true)
+            cyfry = "1234567890";
+            if (malelitery_check.IsChecked == true) 
             {
-                //Random rnd = new Random(ile);
-
+           //     if (!int.TryParse(ileznaow_txt.Text)
+               
+            /*    string wybrane = MaleiDuzeLitery;
+                if (malelitery_check.IsChecked != true)
+                {
+                    wybrane += malelitery_check;
+                }
+            */
+           // Random losuj = new Random();
+                losuj.Next(MaleiDuzeLitery.Length);
+                
             }
             if (cyfry_check.IsChecked == true)
             {
-              
+                losuj.Next(cyfry.Length);
             }
-            if (specjalne_check.IsChecked == true)
+            if(specjalne_check.IsChecked == true)
             {
-
+                losuj.Next(znakiSpecjalne.Length);
+               // znakiSpecjalne == haslo.
             }
-            Random rnd = new Random();
-           // for (int i = 0; i < Cyfry.Length; i++)
-            
 
         }
 
         private void Zatwierdź_btn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"Dane pracownika:{imie_txt.Text} {nazwisko_txt.Text} {Stanowisko_combo.SelectedItem.ToString()}Hasło:");
+            MessageBox.Show($"Dane pracownika:{imie_txt.Text} {nazwisko_txt.Text} {Stanowisko_combo.SelectedItem.ToString()} Hasło:");
         }
     }
 }
